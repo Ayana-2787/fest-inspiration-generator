@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Be Like the Best</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to right, #ece9e6, #ffffff);
+      text-align: center;
+    }
+    .card {
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    #generateBtn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #generateBtn:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1 id="name">Welcome!</h1>
+    <p id="quality">Click below to get inspired.</p>
+    <button id="generateBtn">Generate</button>
+  </div>
+
+  <script>
+    const people = [
+      { name: "Elon Musk", quality: "visionary thinking" },
+      { name: "Oprah Winfrey", quality: "empathetic leadership" },
+      { name: "Steve Jobs", quality: "creative innovation" },
+      { name: "Taylor Swift", quality: "relentless work ethic" },
+      { name: "Sundar Pichai", quality: "humble intelligence" },
+      { name: "Priyanka Chopra", quality: "global charisma" },
+      { name: "Virat Kohli", quality: "fearless determination" },
+      { name: "Indra Nooyi", quality: "strategic brilliance" },
+      { name: "Shah Rukh Khan", quality: "undeniable charm" },
+      { name: "Kiran Mazumdar-Shaw", quality: "trailblazing spirit" }
+    ];
+
+    const nameEl = document.getElementById("name");
+    const qualityEl = document.getElementById("quality");
+    const generateBtn = document.getElementById("generateBtn");
+
+    generateBtn.addEventListener("click", () => {
+      const person = people[Math.floor(Math.random() * people.length)];
+      nameEl.textContent = person.name;
+      qualityEl.textContent = `Their ${person.quality} is why YOU should apply to the fest — be like ${person.name}!`;
+    });
+  </script>
+</body>
+</html>
